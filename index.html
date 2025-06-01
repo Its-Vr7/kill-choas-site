@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Download My eBook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0f1c, #0d111f);
+      color: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Futuristic Lines */
+    .lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .lines::before, .lines::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #00ffe1, transparent);
+      opacity: 0.06;
+      animation: move 6s linear infinite;
+      transform: rotate(25deg);
+    }
+
+    .lines::after {
+      top: 70%;
+      animation-delay: 3s;
+      transform: rotate(-25deg);
+    }
+
+    @keyframes move {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container img {
+      width: 220px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: linear-gradient(to right, #00e5ff, #00ffa6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #cccccc;
+    }
+
+    a.download-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000;
+      background: linear-gradient(135deg, #00ffa6, #00e5ff);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a.download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 255, 200, 0.3);
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container img {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="lines"></div>
+
+  <div class="container">
+    <img src="ebook-cover.jpg" alt="eBook Cover" />
+    <h1>Download Your Free eBook</h1>
+    <p>Unlock powerful insights and change your money mindset forever.</p>
+    <a href="your-ebook.pdf" download class="download-btn">Download Now</a>
+  </div>
+</body>
+</html>
